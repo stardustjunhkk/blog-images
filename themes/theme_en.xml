@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:css='false' b:defaultwidgetversion='2' b:responsive='true' b:templateVersion='1.0.0' lang='en' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:css='false' b:responsive='true' b:templateVersion='1.0.0' lang='en' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
 <meta content='width=device-width, initial-scale=1' name='viewport'/>
 <b:include data='blog' name='all-head-content'/>
@@ -82,13 +82,13 @@ aside h4{font:700 18px Fraunces,Georgia,serif;margin:0 0 8px}
 <div class='layout'>
 <main>
 <b:section class='main' id='page_body' showaddelement='false'>
-<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='1' visible='true'>
 <b:includable id='main'>
   <b:if cond='data:view.isSingleItem'>
     <b:loop values='data:posts' var='post'>
       <article class='post-wrap'>
         <h1 class='post-title'><data:post.title/></h1>
-        <div class='byline'><div class='avatar'>J</div>By Jun from Songdo · <data:post.date/></div>
+        <div class='byline'><div class='avatar'>J</div>By Jun from Songdo · <data:post.timestamp/></div>
         <data:post.body/>
         <b:if cond='data:post.labels'>
           <div class='post-labels'>Filed under: <b:loop values='data:post.labels' var='label'><a expr:href='data:label.url'><data:label.name/></a></b:loop></div>
@@ -97,23 +97,19 @@ aside h4{font:700 18px Fraunces,Georgia,serif;margin:0 0 8px}
     </b:loop>
   <b:else/>
     <div class='sec-title'>Latest reviews</div>
-    <b:if cond='data:posts.empty'>
-      <div class='empty'>No posts here yet — new reviews coming soon!</div>
-    <b:else/>
-      <div class='cards'>
+          <div class='cards'>
       <b:loop values='data:posts' var='post'>
         <a class='card' expr:href='data:post.url'>
-          <b:if cond='data:post.featuredImage'><div class='img'><img expr:alt='data:post.title' expr:src='data:post.featuredImage' loading='lazy'/></div></b:if>
+          <b:if cond='data:post.firstImageUrl'><div class='img'><img expr:alt='data:post.title' expr:src='data:post.firstImageUrl' loading='lazy'/></div></b:if>
           <div class='body'>
-            <div class='meta'><data:post.date/><b:if cond='data:post.labels'> · <data:post.labels.first.name/></b:if></div>
+            <div class='meta'><data:post.timestamp/></div>
             <h3><data:post.title/></h3>
-            <p><data:post.snippets.short/></p>
+            <p><data:post.snippet/></p>
             <span class='more'>Read review →</span>
           </div>
         </a>
       </b:loop>
       </div>
-    </b:if>
     <div class='pager'>
       <b:if cond='data:newerPageUrl'><a expr:href='data:newerPageUrl'>← Newer</a><b:else/><span/></b:if>
       <b:if cond='data:olderPageUrl'><a expr:href='data:olderPageUrl'>Older →</a></b:if>
