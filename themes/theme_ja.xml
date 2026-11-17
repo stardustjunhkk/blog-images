@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.0' lang='ja' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<b:include data='blog' name='all-head-content'/>
+<title><b:if cond='data:view.isHomepage'><data:blog.title.escaped/><b:else/><data:view.title.escaped/> | <data:blog.title.escaped/></b:if></title>
+<link href='https://www.songdolocal.com/' hreflang='en' rel='alternate'/>
+<link href='https://ja.songdolocal.com/' hreflang='ja' rel='alternate'/>
+<link href='https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Inter:wght@400;500;600&amp;display=swap' rel='stylesheet'/>
+<b:skin><![CDATA[
+:root{--bg:#fbf8f3;--paper:#fff;--ink:#1f1d1a;--muted:#6f6a62;--line:#ebe5da;--accent:#d9442b;--accent-soft:#fde9e4;--teal:#1f7a6d;--teal-soft:#e2f2ef;--gold:#f2b544}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,"Noto Sans JP","Noto Sans KR",system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.sl-head{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.sl-nav{display:flex;align-items:center;gap:24px;height:64px}
+.sl-logo{font:700 24px Fraunces,Georgia,serif;letter-spacing:-.5px}.sl-logo span{color:var(--accent)}
+.sl-menu{display:flex;gap:20px;font-weight:500;font-size:15px;color:var(--muted)}.sl-menu a:hover{color:var(--ink)}
+.sl-lang{margin-left:auto;display:flex;gap:6px}
+.sl-lang a{font-size:13px;padding:4px 10px;border:1px solid var(--line);border-radius:99px}
+.sl-lang a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sl-hero{padding:52px 0 28px;max-width:720px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.sl-hero h1{font:700 46px/1.1 Fraunces,Georgia,serif;margin:10px 0 14px;letter-spacing:-1px}
+.sl-hero p{color:var(--muted);font-size:18px;margin:0 0 22px}
+.sl-search{display:flex;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:6px}
+.sl-search input{flex:1;border:0;font:inherit;padding:10px 12px;background:transparent;outline:none}
+.sl-search button{border:0;background:var(--accent);color:#fff;font-weight:600;border-radius:10px;padding:0 18px;cursor:pointer}
+.sec-title{font:700 24px Fraunces,Georgia,serif;margin:8px 0 14px}
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 36px}
+.area{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.area b{font:600 17px Fraunces,Georgia,serif}.area span{font-size:13px;color:var(--muted)}
+.area:hover{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.layout{display:grid;grid-template-columns:1fr 300px;gap:32px;padding:20px 0 64px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.card .img{aspect-ratio:16/10;background:#eee;overflow:hidden}.card .img img{width:100%;height:100%;object-fit:cover;display:block}
+.card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.meta{font-size:13px;color:var(--muted)}
+.card h3{font:600 20px/1.28 Fraunces,Georgia,serif;margin:0}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card .more{margin-top:auto;font-size:14px;font-weight:600;color:var(--teal)}
+.pager{display:flex;justify-content:space-between;margin:28px 0 0;font-weight:600;color:var(--teal)}
+.empty{background:var(--paper);border:1px dashed var(--line);border-radius:18px;padding:40px;text-align:center;color:var(--muted)}
+aside .box{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:20px}
+aside h4{font:700 18px Fraunces,Georgia,serif;margin:0 0 8px}
+.about{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.avatar{width:52px;height:52px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font:700 22px Fraunces,Georgia,serif;color:#fff;flex:none}
+.legend div{font-size:14px;margin:6px 0}
+.fxnote{font-size:13px;color:var(--muted)}
+.post-wrap{max-width:780px}
+.post-title{font:700 38px/1.15 Fraunces,Georgia,serif;margin:6px 0 12px;letter-spacing:-.6px}
+.byline{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);margin-bottom:20px}
+.byline .avatar{width:34px;height:34px;font-size:15px}
+.post-labels{margin:30px 0 0;font-size:14px;color:var(--muted)}
+.post-labels a{display:inline-block;margin:4px 6px 0 0;padding:3px 10px;border-radius:99px;background:var(--teal-soft);color:var(--teal);font-weight:600}
+.sl-foot{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+@media (max-width:860px){.sl-hero h1{font-size:34px}.layout{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.sl-menu{display:none}.areas{grid-template-columns:1fr 1fr}.post-title{font-size:30px}}
+]]></b:skin>
+</head>
+<body>
+<header class='sl-head'><div class='wrap sl-nav'>
+  <a class='sl-logo' expr:href='data:blog.homepageUrl'>ソンド<span>.</span>ローカル</a>
+  <nav class='sl-menu'><a href='/search/label/Eat'>グルメ</a><a href='/search/label/Cafe'>カフェ</a><a href='/search/label/Mart'>スーパー・マート</a><a href='/search/label/Guide'>ガイド</a></nav>
+  <div class='sl-lang'><a class='' href='https://www.songdolocal.com/'>EN</a><a class='on' href='https://ja.songdolocal.com/'>日本語</a></div>
+</div></header>
+
+<div class='wrap'>
+<b:if cond='data:view.isHomepage'>
+  <section class='sl-hero'>
+    <div class='eyebrow'>韓国・仁川 松島（ソンド）在住7年</div>
+    <h1>ソンドの学生が通う、本当のおいしいお店。</h1>
+    <p>松島（ソンド）で7年間大学に通っている私と友達が、何度もリピートしているお店を紹介します。料金はウォンと円で表示、注文のしかたや旅行者が知っておくと便利なことも。</p>
+    <form action='/search' class='sl-search' method='get'><input name='q' placeholder='お店を検索…'/><button type='submit'>🔍</button></form>
+  </section>
+  <div class='sec-title'>エリアから探す</div>
+  <div class='areas'><a class='area' expr:href='data:blog.homepageUrl + &quot;search/label/Triple Street&quot;'><b>トリプルストリート</b><span>트리플스트리트 · テクノパーク駅</span></a><a class='area' expr:href='data:blog.homepageUrl + &quot;search/label/Central Park&quot;'><b>セントラルパーク</b><span>센트럴파크 · セントラルパーク駅</span></a><a class='area' expr:href='data:blog.homepageUrl + &quot;search/label/Coast Guard&quot;'><b>海洋警察庁エリア</b><span>해양경찰청 인근</span></a><a class='area' expr:href='data:blog.homepageUrl + &quot;search/label/Incheon Natl Univ&quot;'><b>仁川大入口駅エリア</b><span>인천대입구역</span></a></div>
+</b:if>
+
+<div class='layout'>
+<main>
+<b:section class='main' id='main' maxwidgets='1' showaddelement='false'>
+<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2' visible='true'>
+<b:includable id='main'>
+  <b:if cond='data:view.isSingleItem'>
+    <b:loop values='data:posts' var='post'>
+      <article class='post-wrap'>
+        <h1 class='post-title'><data:post.title/></h1>
+        <div class='byline'><div class='avatar'>J</div>Jun（ソンド在住） · <data:post.date/></div>
+        <data:post.body/>
+        <b:if cond='data:post.labels'>
+          <div class='post-labels'>カテゴリ: <b:loop values='data:post.labels' var='label'><a expr:href='data:label.url'><data:label.name/></a></b:loop></div>
+        </b:if>
+      </article>
+    </b:loop>
+  <b:else/>
+    <div class='sec-title'>新着レビュー</div>
+    <b:if cond='data:posts.empty'>
+      <div class='empty'>まだ記事がありません。もうすぐ公開します！</div>
+    <b:else/>
+      <div class='cards'>
+      <b:loop values='data:posts' var='post'>
+        <a class='card' expr:href='data:post.url'>
+          <b:if cond='data:post.featuredImage'><div class='img'><img expr:alt='data:post.title' expr:src='data:post.featuredImage' loading='lazy'/></div></b:if>
+          <div class='body'>
+            <div class='meta'><data:post.date/><b:if cond='data:post.labels'> · <data:post.labels.first.name/></b:if></div>
+            <h3><data:post.title/></h3>
+            <p><data:post.snippets.short/></p>
+            <span class='more'>レビューを読む →</span>
+          </div>
+        </a>
+      </b:loop>
+      </div>
+    </b:if>
+    <div class='pager'>
+      <b:if cond='data:newerPageUrl'><a expr:href='data:newerPageUrl'>← 新しい記事</a><b:else/><span/></b:if>
+      <b:if cond='data:olderPageUrl'><a expr:href='data:olderPageUrl'>以前の記事 →</a></b:if>
+    </div>
+  </b:if>
+</b:includable>
+</b:widget>
+</b:section>
+</main>
+<aside>
+  <div class='box'>
+    <div class='about'><div class='avatar'>J</div><div><h4 style='margin:0'>こんにちは、Junです 👋</h4><div class='meta'>大学生・ソンド在住7年</div></div></div>
+    <div style='font-size:14px;color:var(--muted)'>ソンドで7年間暮らしながら、友達といろいろなお店に行ってきました。本当におすすめできるお店と、旅行で来る方に知ってほしいちょっとしたコツを書いています。</div>
+  </div>
+  <div class='box legend'><h4>旅行者向けアイコン</h4><div>🌐 多言語メニューあり</div><div>🗣️ 英語OKのスタッフ</div><div>💳 海外カード使用OK</div><div>🧑 おひとり様OK</div><div>🥬 ベジメニューあり</div><div>⚠️ アレルギー注意</div></div>
+  <div class='fxnote'>💱 料金はウォン＋円の目安で自動表示されます。</div>
+</aside>
+</div>
+</div>
+<footer class='sl-foot'><div class='wrap'>© ソンド・ローカル · ソンド在住の地元民がおすすめするお店</div></footer>
+</body>
+</html>
